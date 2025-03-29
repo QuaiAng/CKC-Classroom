@@ -1,3 +1,6 @@
+import 'package:ckcclassroom/presentation/pages/DetailClassScreen.dart';
+import 'package:ckcclassroom/presentation/pages/DetailPostScreen.dart';
+import 'package:ckcclassroom/presentation/pages/HomeScreen.dart';
 import 'package:ckcclassroom/presentation/pages/LoginScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -5,8 +8,8 @@ class RouteName {
   static const String loginScreen = "/login";
   static const String registerScreen = "/register";
   static const String homeScreen = "/home";
-  static const String cartScreen = "/cart";
-  static const String detailScreen = "/detail";
+  static const String detailClass = "/detailClass";
+  static const String detailPost = "/detailPost";
   static const String verifyotpScreen = "/verifyotp";
   static const String detaiListProductScreen = "/detaillistproduct";
   static const String paymentScreen = "/payment";
@@ -48,18 +51,16 @@ class AppRouter {
       //     ),
       //   );
 
-      //Màn hình chờ
       case RouteName.loginScreen:
         return MaterialPageRoute(builder: (_) => const Loginscreen());
-      // //Màn hình chờ
-      // case RouteName.waitingForApprovalScreen:
-      //   return MaterialPageRoute(builder: (_) => Waitingforapprovalscreen());
-      // //Màn hình chờ
-      // case RouteName.resultSearchScreen:
-      //   return MaterialPageRoute(builder: (_) => const Resultsearchscreen());
-      // //Màn hình chính dùng để điều hướng đến các màn hình khác
-      // case RouteName.mainScreen:
-      //   return MaterialPageRoute(builder: (_) => const Mainscreen());
+      case RouteName.homeScreen:
+        return MaterialPageRoute(builder: (_) => Homescreen());
+      //Màn hình chờ
+      case RouteName.detailClass:
+        return MaterialPageRoute(builder: (_) => const Detailclassscreen());
+      //Màn hình chính dùng để điều hướng đến các màn hình khác
+      case RouteName.detailPost:
+        return MaterialPageRoute(builder: (_) => const Detailpostscreen());
       // //Màn hình xem chi tiết danh sách sản phẩm
       // case RouteName.detaiListProductScreen:
       //   return MaterialPageRoute(builder: (_) => const Bestsellerlist());

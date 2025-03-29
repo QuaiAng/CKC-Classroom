@@ -5,5 +5,5 @@ class Appcolors {
   static const Color backgroundColor = Colors.white;
   static const Color placeholderColor = Color(0xFFB2ACAC);
   static const Color lightGray = Color.fromARGB(255, 204, 204, 204);
-  static const Color gray = Color.fromARGB(255, 125, 125, 125);
+  static const Color black = Color(0xFF494949);
 }

@@ -1,3 +1,4 @@
+import 'package:ckcclassroom/presentation/pages/HomeScreen.dart';
 import 'package:ckcclassroom/presentation/widgets/ButtonLogin.dart';
 import 'package:ckcclassroom/presentation/widgets/CKCTextField.dart';
 import 'package:ckcclassroom/res/colors.dart';
@@ -65,7 +66,16 @@ class Loginscreen extends StatelessWidget {
               Container(
                 width: double.infinity,
                 alignment: Alignment.centerRight,
-                child: Buttonlogin(onPressed: () {}, content: "LOGIN"),
+                child: Buttonlogin(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Homescreen(),
+                        ),
+                      );
+                    },
+                    content: "LOGIN"),
               )
             ],
           ),

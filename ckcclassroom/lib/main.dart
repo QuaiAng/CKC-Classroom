@@ -2,6 +2,9 @@ import 'dart:io';
 import 'package:ckcclassroom/app_router.dart';
 import 'package:ckcclassroom/data/repositoties/UserRepository.dart';
 import 'package:ckcclassroom/data/services/UserService.dart';
+import 'package:ckcclassroom/presentation/states/DetailClassScreenViewModel.dart';
+import 'package:ckcclassroom/presentation/states/DetailPostViewModel.dart';
+import 'package:ckcclassroom/presentation/states/HomeScreenViewModel.dart';
 import 'package:ckcclassroom/presentation/states/LoginScreenViewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -64,13 +67,13 @@ void main() {
       ChangeNotifierProvider(
           create: (context) =>
               Loginscreenviewmodel(context.read<Userrepository>())),
-      // ChangeNotifierProvider(
-      //     create: (context) =>
-      //         Changepasswordviewmodel(context.read<Userrepository>())),
-      // ChangeNotifierProvider(create: (_) => Detailsearchviewmodel()),
-      // ChangeNotifierProvider(
-      //     create: (context) =>
-      //         Editinfoviewmodel(context.read<Userrepository>())),
+      ChangeNotifierProvider(
+          create: (context) =>
+              Homescreenviewmodel(context.read<Userrepository>())),
+      ChangeNotifierProvider(create: (_) => Detailclassscreenviewmodel()),
+      ChangeNotifierProvider(
+        create: (context) => Detailpostviewmodel(),
+      )
       // ChangeNotifierProvider(create: (_) => Forgotpasswordviewmodel()),
       // ChangeNotifierProvider(
       //     create: (context) => Loginviewmodel(context.read<Userrepository>())),
@@ -134,7 +137,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: const MaterialApp(
-        initialRoute: RouteName.loginScreen,
+        initialRoute: RouteName.homeScreen,
         onGenerateRoute: AppRouter.generateRoute,
         debugShowCheckedModeBanner: false,
         // home: Detailordershop(),
